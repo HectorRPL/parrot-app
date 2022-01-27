@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from '../services/auth/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { InterceptorRequestService } from '../services/interceptor-request/interceptor-request.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,10 +19,16 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
-    AuthService
+    AuthService,
+    { // add to any request Authorization: refresh_token Headers
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorRequestService,
+      multi: true,
+    }
+
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
   ]
 })
 export class AppModule { }
