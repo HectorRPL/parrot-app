@@ -31,4 +31,5 @@ import { InterceptorRequestService } from '../services/interceptor-request/inter
     AppComponent,
   ]
 })
-export class AppModule { }
+export class AppModule {
+}
