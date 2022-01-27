@@ -1,0 +1,11 @@
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Message</mat-label>
+  <input
+    matInput
+    [type]="'text'"
+    #message
+    maxlength="256"
+    placeholder="Enter your text">
+  <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+  <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+</mat-form-field>
