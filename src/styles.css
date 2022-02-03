@@ -8,3 +8,21 @@ body {
   margin: 0;
   font-family: "Times New Roman", "Helvetica Neue", sans-serif;
 }
+
+/*
+  titles of cards
+*/
+
+mat-card-title {
+  color: #f53b2e;
+  font-size: 6vh !important;
+  margin-bottom: 30px !important;
+}
+
+/*
+  general
+*/
+
+.full-width {
+  width: 100%;
+}

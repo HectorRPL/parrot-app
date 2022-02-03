@@ -1,11 +1,23 @@
-<app-form-sign-in
-  (formValue)="this.getUser($event);"
-  (isValid)="this.getIsValid($event);"
->
-</app-form-sign-in>
+<mat-card>
+  <mat-card-subtitle>wellcome</mat-card-subtitle>
+  <mat-card-title>parrot</mat-card-title>
+  <mat-card-content>
+    <app-form-sign-in
+      (formValue)="this.getUser($event);"
+      (isValid)="this.getIsValid($event);"
+    >
+    </app-form-sign-in>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions>
+    <app-control-button-sign-up></app-control-button-sign-up>
 
-<app-control-button-sign-in
-  [user]="this.user"
-  [isValid]="this.isValid"
->
-</app-control-button-sign-in>
+    <app-control-button-sign-in
+      [user]="this.user"
+      [isValid]="this.isValid"
+    >
+    </app-control-button-sign-in>
+  </mat-card-actions>
+</mat-card>
+
+

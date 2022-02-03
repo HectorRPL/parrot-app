@@ -1,0 +1,10 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-wrapper {
+  width: 400px;
+  height: 50%;
+}

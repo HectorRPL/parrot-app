@@ -32,7 +32,7 @@ $primary-color: (
     900 : #dedede,
   ));
 
-$accent-color: (
+$warn-color: (
   50 : #f8b8b7,
   100 : #f8b8b7,
   200 : #f8b8b7,
@@ -56,7 +56,7 @@ $accent-color: (
     900 : #dedede,
   ));
 
-$warn-color: (
+$accent-color: (
   50 : #ffeaed,
   100 : #ffcbd0,
   200 : #f09797,
@@ -84,7 +84,7 @@ $warn-color: (
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $parrot-app-primary: mat.define-palette($primary-color);
-$parrot-app-accent: mat.define-palette($warn-color);
+$parrot-app-accent: mat.define-palette($accent-color);
 $parrot-app-warn: mat.define-palette($warn-color);
 
 // Create the theme object. A theme consists of configurations for individual
