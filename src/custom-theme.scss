@@ -8,15 +8,84 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
+$primary-color: (
+  50 : #bebebe,
+  100 : #9f9f9f,
+  200 : #767676,
+  300 : #626262,
+  400 : #434343,
+  500 : #222222,
+  600 : #222222,
+  700 : #222222,
+  800 : #222222,
+  900 : #222222,
+  contrast: (
+    50 : #ffffff,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #fafafa,
+    700 : #f5f5f5,
+    800 : #f0f0f0,
+    900 : #dedede,
+  ));
+
+$accent-color: (
+  50 : #f8b8b7,
+  100 : #f8b8b7,
+  200 : #f8b8b7,
+  300 : #f8b8b7,
+  400 : #f8b8b7,
+  500 : #f8b8b7,
+  600 : #d97a6e,
+  700 : #be493c,
+  800 : #ba1f0c,
+  900 : #b20000,
+  contrast: (
+    50 : #ffffff,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #fafafa,
+    700 : #f5f5f5,
+    800 : #f0f0f0,
+    900 : #dedede,
+  ));
+
+$warn-color: (
+  50 : #ffeaed,
+  100 : #ffcbd0,
+  200 : #f09797,
+  300 : #e66f6e,
+  400 : #f04d4a,
+  500 : #f53b2e,
+  600 : #e6302e,
+  700 : #d42428,
+  800 : #c71c21,
+  900 : #b80c14,
+  contrast: (
+    50 : #ffffff,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #fafafa,
+    700 : #f5f5f5,
+    800 : #f0f0f0,
+    900 : #dedede,
+  ));
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$parrot-app-primary: mat.define-palette(mat.$indigo-palette);
-$parrot-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$parrot-app-warn: mat.define-palette(mat.$red-palette);
+$parrot-app-primary: mat.define-palette($primary-color);
+$parrot-app-accent: mat.define-palette($warn-color);
+$parrot-app-warn: mat.define-palette($warn-color);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
