@@ -1,9 +1,11 @@
 <app-form-sign-in
   (formValue)="this.getUser($event);"
+  (isValid)="this.getIsValid($event);"
 >
 </app-form-sign-in>
 
 <app-control-button-sign-in
   [user]="this.user"
+  [isValid]="this.isValid"
 >
 </app-control-button-sign-in>

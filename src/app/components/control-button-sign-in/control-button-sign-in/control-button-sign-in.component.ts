@@ -10,6 +10,7 @@ import { UserModel } from '../../../../models/user/user-model';
 export class ControlButtonSignInComponent implements OnInit {
 
   @Input() user: UserModel = new UserModel('', '');
+  @Input() isValid: boolean = false;
 
   constructor(
     private authService: AuthService,

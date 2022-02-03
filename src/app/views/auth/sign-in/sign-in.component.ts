@@ -9,6 +9,7 @@ import { UserModel } from '../../../../models/user/user-model';
 export class SignInComponent implements OnInit {
 
   user: UserModel = new UserModel('', '');
+  isValid: boolean = false;
 
   constructor() {
   }
@@ -18,6 +19,10 @@ export class SignInComponent implements OnInit {
 
   getUser(user: UserModel) {
     this.user = user;
+  }
+
+  getIsValid(isValid: boolean) {
+    this.isValid = isValid;
   }
 
 }

@@ -13,7 +13,7 @@ export class FormSignInComponent implements OnInit {
 
   @Input() user: UserModel = new UserModel('', '');
 
-  @Output() isValid: boolean = false;
+  @Output() isValid = new EventEmitter<boolean>();
   @Output() formValue = new EventEmitter<UserModel>();
 
   signInForm: FormGroup = new FormGroup({});
@@ -36,12 +36,14 @@ export class FormSignInComponent implements OnInit {
         this.user.username,
         [
           Validators.required,
-          Validators.email
+          Validators.email,
+          Validators.max(35),
         ]),
       'password': new FormControl(
         user.password,
         [
-          Validators.required
+          Validators.required,
+          Validators.max(16),
         ]),
     });
   }
@@ -66,7 +68,10 @@ export class FormSignInComponent implements OnInit {
       .subscribe(
         (formStatus: string) => {
           if (formStatus === 'VALID') {
-            this.emitUser()
+            this.emitUser();
+            this.isValid.emit(true);
+          } else {
+            this.isValid.emit(false);
           }
       });
   }

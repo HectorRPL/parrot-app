@@ -2,6 +2,7 @@
   mat-raised-button
   color="primary"
   (click)="this.createToken(this.user)"
+  [disabled]="!this.isValid"
 >
-  Sign In
+  isValid: {{this.isValid}}
 </button>
