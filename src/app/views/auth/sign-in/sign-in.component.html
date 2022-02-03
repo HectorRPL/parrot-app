@@ -1,2 +1,9 @@
-<app-form-sign-in></app-form-sign-in>
-<app-control-button-sign-in></app-control-button-sign-in>
+<app-form-sign-in
+  (formValue)="this.getUser($event);"
+>
+</app-form-sign-in>
+
+<app-control-button-sign-in
+  [user]="this.user"
+>
+</app-control-button-sign-in>

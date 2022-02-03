@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserModel } from '../../../../models/user/user-model';
 import { map, takeUntil } from 'rxjs/operators';
@@ -12,6 +12,9 @@ import { Subject } from 'rxjs';
 export class FormSignInComponent implements OnInit {
 
   @Input() user: UserModel = new UserModel('', '');
+
+  @Output() isValid: boolean = false;
+  @Output() formValue = new EventEmitter<UserModel>();
 
   signInForm: FormGroup = new FormGroup({});
   destroy$ = new Subject();
@@ -60,9 +63,20 @@ export class FormSignInComponent implements OnInit {
       .pipe(
         takeUntil(this.destroy$)
       )
-      .subscribe((formStatus: string) => {
-        console.log(formStatus);
+      .subscribe(
+        (formStatus: string) => {
+          if (formStatus === 'VALID') {
+            this.emitUser()
+          }
       });
+  }
+
+  emitUser(): void {
+    const user: UserModel = {
+      username: this.signInForm.get('username')?.value,
+      password: this.signInForm.get('password')?.value,
+    };
+    this.formValue.emit(user);
   }
 
 }
