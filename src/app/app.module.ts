@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from '../services/auth/auth.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorRequestService } from '../services/interceptor-request/interceptor-request.service';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { InterceptorRequestService } from '../services/interceptor-request/inter
       multi: true,
     }
 
+  ],
+  exports: [
   ],
   bootstrap: [
     AppComponent,
