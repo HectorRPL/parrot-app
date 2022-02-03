@@ -28,3 +28,6 @@ $ ng serve
 
 http://localhost:4200
 
+#### NOTES
+
+If you have W11 is possible to you need remove some security permissions to execute ng commands in console. Just remove it
