@@ -5,6 +5,7 @@ import { SignInRoutingModule } from './sign-in-routing.module';
 import { ControlInputPasswordModule } from '../../../components/control-input-password/control-input-password.module';
 import { ControlButtonSignInModule } from '../../../components/control-button-sign-in/control-button-sign-in.module';
 import { ControlInputEmailModule } from '../../../components/control-input-email/control-input-email.module';
+import { FormSignInModule } from '../../../components/form-sign-in/form-sign-in.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ControlInputEmailModule } from '../../../components/control-input-email
     ControlInputPasswordModule,
     ControlButtonSignInModule,
     ControlInputEmailModule,
+    FormSignInModule,
   ]
 })
 export class SignInModule {

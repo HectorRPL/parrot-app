@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-control-input-password',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlInputPasswordComponent implements OnInit {
 
-  constructor() { }
+  @Input() name: string = '';
+  @Input() parentForm: FormGroup = new FormGroup({});
+
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
