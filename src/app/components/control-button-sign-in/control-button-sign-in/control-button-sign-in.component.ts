@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../../../../services/auth/auth.service';
 import { UserModel } from '../../../../models/user/user-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-control-button-sign-in',
@@ -14,6 +15,7 @@ export class ControlButtonSignInComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private router: Router,
   ) {
   }
 
@@ -24,7 +26,7 @@ export class ControlButtonSignInComponent implements OnInit {
     this.authService.getToken(user)
       .pipe()
       .subscribe(
-        value => console.log(value),
+        value => this.router.navigate([`/order/details`]),
         error => console.log(error),
       );
   }
