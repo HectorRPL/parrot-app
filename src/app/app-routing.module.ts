@@ -6,6 +6,10 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: ()=> import('./views/auth/auth.module').then(m => m.AuthModule),
   },
+  {
+    path: 'order',
+    loadChildren: ()=> import('./views/order/order.module').then(m => m.OrderModule),
+  },
   { path: '',
     redirectTo: '/auth/signIn',
     pathMatch: 'full'
